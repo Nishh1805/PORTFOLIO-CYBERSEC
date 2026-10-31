@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishat Khan | Cybersecurity, Digital Forensics &amp; Web Developer Cyberspace</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: {
+                            cyan: '#00f0ff',
+                            green: '#00ff66',
+                            magenta: '#ff007f',
+                            purple: '#7928ca',
+                            dark: '#030712',
+                            panel: '#090d16',
+                            border: '#1e293b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                        cyber: ['Share Tech Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .neon-glow-cyan {
+            box-shadow: 0 0 20px -3px rgba(0, 240, 255, 0.4);
+        }
+        .neon-glow-green {
+            box-shadow: 0 0 20px -3px rgba(0, 255, 102, 0.4);
+        }
+        .neon-glow-magenta {
+            box-shadow: 0 0 20px -3px rgba(255, 0, 127, 0.4);
+        }
+        .neon-text-cyan {
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
+        }
+        .neon-text-green {
+            text-shadow: 0 0 8px rgba(0, 255, 102, 0.7);
+        }
+        .cyber-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+        }
+        .scanline {
+            background: linear-gradient(
+                to bottom,
+                rgba(255,255,255,0),
+                rgba(255,255,255,0) 50%,
+                rgba(0, 240, 255, 0.05) 50%,
+                rgba(0, 240, 255, 0.05)
+            );
+            background-size: 100% 4px;
+        }
+        .cyber-border {
+            clip-path: polygon(
+                0 0, 
+                calc(100% - 12px) 0, 
+                100% 12px, 
+                100% 100%, 
+                12px 100%, 
+                0 calc(100% - 12px)
+            );
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased cyber-grid scanline selection:bg-cyber-cyan selection:text-slate-950">
+
+    <!-- Top Cyberspace Status Bar -->
+    <div class="bg-slate-950/90 border-b border-cyber-cyan/30 text-xs font-cyber text-cyber-cyan px-4 py-1.5 flex justify-between items-center backdrop-blur-md">
+        <div class="flex items-center space-x-3">
+            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-cyber-green animate-ping mr-2"></span> SYSTEM_ONLINE // PORTFOLIO_V3.1</span>
+            <span class="hidden sm:inline text-slate-500">|</span>
+            <span class="hidden sm:inline text-slate-400">LOC: MUMBAI, INDIA</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="text-cyber-green"><i class="fa-solid fa-shield-halved mr-1"></i> CYBERSECURITY ENTHUSIAST</span>
+            <span class="text-cyber-magenta hidden md:inline"><i class="fa-solid fa-camera mr-1"></i> JAVED JAFFREY AWARD WINNER</span>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Cyberspace Brand Logo -->
+                <a href="#hero" class="flex items-center space-x-3 group">
+                    <div class="w-9 h-9 rounded bg-cyber-cyan/10 border border-cyber-cyan/60 flex items-center justify-center font-cyber font-bold text-cyber-cyan group-hover:bg-cyber-cyan group-hover:text-slate-950 transition-all">
+                        NK
+                    </div>
+                    <div>
+                        <span class="font-cyber font-bold text-lg tracking-wider text-white">NISHAT<span class="text-cyber-cyan">.KHAN</span></span>
+                        <span class="block text-[10px] font-mono text-slate-400">FORENSICS &bull; DEV &bull; SOCIAL</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center space-x-6 text-xs font-cyber">
+                    <a href="#forensics" class="text-slate-300 hover:text-cyber-cyan transition-colors">/CORE_FOCUS</a>
+                    <a href="#projects" class="text-slate-300 hover:text-cyber-cyan transition-colors">/PROJECTS</a>
+                    <a href="#achievements" class="text-slate-300 hover:text-cyber-cyan transition-colors">/AWARDS_&amp;_GALLERY</a>
+                    <a href="#socialwork" class="text-slate-300 hover:text-cyber-cyan transition-colors">/SOCIAL_IMPACT</a>
+                    <a href="#terminal-section" class="text-slate-300 hover:text-cyber-green transition-colors">/CYBER_CLI</a>
+                    <a href="#contact" class="px-3.5 py-2 rounded bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/40 hover:bg-cyber-cyan hover:text-slate-950 font-bold transition-all">CONNECT_NOW</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-400 hover:text-cyber-cyan focus:outline-none" aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars-staggered text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-cyber-cyan/30 px-4 pt-2 pb-4 space-y-2 font-cyber text-sm">
+            <a href="#forensics" class="mobile-nav-link block text-slate-300 hover:text-cyber-cyan py-1">/CORE_FOCUS</a>
+            <a href="#projects" class="mobile-nav-link block text-slate-300 hover:text-cyber-cyan py-1">/PROJECTS</a>
+            <a href="#achievements" class="mobile-nav-link block text-slate-300 hover:text-cyber-cyan py-1">/AWARDS_&amp;_GALLERY</a>
+            <a href="#socialwork" class="mobile-nav-link block text-slate-300 hover:text-cyber-cyan py-1">/SOCIAL_IMPACT</a>
+            <a href="#terminal-section" class="mobile-nav-link block text-slate-300 hover:text-cyber-green py-1">/CYBER_CLI</a>
+            <a href="#contact" class="mobile-nav-link block text-cyber-cyan font-bold py-1">CONNECT_NOW</a>
+        </div>
+    </nav>
+
+    <!-- Open For Work Banner -->
+    <div class="bg-gradient-to-r from-cyber-cyan/20 via-slate-900 to-cyber-magenta/20 border-b border-slate-800 py-2.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between text-xs font-mono text-slate-300 gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded bg-cyber-green/20 text-cyber-green border border-cyber-green/40 font-bold uppercase text-[10px]">Open To Work</span>
+                <span>WFH Internships &bull; Digital Forensics / Cybersecurity &bull; Web Dev &bull; Social Media &bull; Data Entry</span>
+            </div>
+            <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="text-cyber-cyan hover:underline flex items-center gap-1 font-cyber">
+                <span>View LinkedIn Profile</span> <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-16 md:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Main Info -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-slate-900 border border-cyber-cyan/40 text-cyber-cyan text-xs font-cyber">
+                        <i class="fa-solid fa-terminal"></i>
+                        <span>WELCOME_TO_MY_CYBERSPACE</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        NISHAT <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-green to-cyber-magenta">KHAN</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed">
+                        Cybersecurity &amp; Digital Forensics Scholar pursuing <strong class="text-cyber-cyan font-semibold">B.Sc. IT (Cybersecurity)</strong>. Experienced Full-Stack Web Developer, Social Media Manager, and Social Impact Advocate.
+                    </p>
+
+                    <!-- Target Career Tags -->
+                    <div class="flex flex-wrap gap-2 text-xs font-cyber pt-2">
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-cyber-cyan border border-cyber-cyan/30">#DigitalForensics</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-cyber-green border border-cyber-green/30">#WebDevelopment</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-cyber-magenta border border-cyber-magenta/30">#SocialMediaManager</span>
+                        <span class="px-2.5 py-1 rounded bg-slate-900 text-amber-400 border border-amber-400/30">#DataEntry_WFH</span>
+                    </div>
+
+                    <!-- Direct Actions -->
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded bg-cyber-cyan hover:bg-cyber-cyan/80 text-slate-950 font-cyber font-bold flex items-center space-x-2 shadow-lg shadow-cyber-cyan/20 transition-all">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                            <span>LINKEDIN_PROFILE</span>
+                        </a>
+                        <a href="#projects" class="px-6 py-3 rounded bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 font-cyber flex items-center space-x-2 transition-all">
+                            <i class="fa-solid fa-laptop-code text-cyber-green"></i>
+                            <span>VIEW_PROJECTS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cyberspace Interactive Profile HUD -->
+                <div class="lg:col-span-5">
+                    <div class="bg-cyber-panel border border-cyber-cyan/40 rounded-xl p-6 neon-glow-cyan relative">
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4 font-cyber text-xs">
+                            <span class="text-cyber-cyan"><i class="fa-solid fa-id-card mr-1"></i> CANDIDATE_DOSSIER</span>
+                            <span class="text-cyber-green">STATUS: ACTIVE</span>
+                        </div>
+
+                        <div class="font-mono text-xs space-y-2 text-slate-300">
+                            <p><span class="text-cyber-magenta">Candidate:</span> Nishat Khan</p>
+                            <p><span class="text-cyber-cyan">Education:</span> B.Sc. IT (Cybersecurity) @ BMN College</p>
+                            <p><span class="text-cyber-cyan">Diploma:</span> Computer Science @ M.H. Saboo Siddik</p>
+                            <p><span class="text-cyber-green">Core Domains:</span> Digital Forensics, Web Dev, UI/UX, Data Entry</p>
+                            <p><span class="text-amber-400">Award Spotlight:</span> Photography Award by <strong class="text-white">Javed Jaffrey</strong></p>
+                            <p><span class="text-cyber-magenta">Special Projects:</span> Beach Cleaning Robot Car &amp; Crossword Web</p>
+                            <p><span class="text-cyber-cyan">Social Work:</span> NSS Volunteer &amp; "Nish Tech Kids" Founder</p>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between font-cyber text-xs">
+                            <span class="text-slate-400"><i class="fa-solid fa-location-dot text-cyber-cyan mr-1"></i> Wadala, Mumbai</span>
+                            <button onclick="copyToClipboard('khanny9820@gmail.com', 'Email copied!')" class="text-cyber-green hover:underline">
+                                <i class="fa-regular fa-copy mr-1"></i> Copy Email
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Focus & Skills Section -->
+    <section id="forensics" class="py-20 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-cyan mb-2">Capabilities Matrix</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Digital Forensics, Web Dev &amp; Ops Focus</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Forensics & Security Card -->
+                <div class="bg-slate-950 border border-cyber-cyan/30 rounded-xl p-6 hover:border-cyber-cyan transition-all">
+                    <div class="w-12 h-12 rounded bg-cyber-cyan/10 text-cyber-cyan flex items-center justify-center text-xl mb-4 font-cyber">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Digital Forensics &amp; Security</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Studying evidence preservation, network hygiene, relational data protection, and secure data handling procedures.
+                    </p>
+                    <ul class="text-xs font-mono text-cyber-cyan space-y-1">
+                        <li>&bull; Basic Forensics Principles</li>
+                        <li>&bull; Network Hygiene &amp; Auditing</li>
+                        <li>&bull; Data Integrity Rules</li>
+                    </ul>
+                </div>
+
+                <!-- Web Development Card -->
+                <div class="bg-slate-950 border border-cyber-green/30 rounded-xl p-6 hover:border-cyber-green transition-all">
+                    <div class="w-12 h-12 rounded bg-cyber-green/10 text-cyber-green flex items-center justify-center text-xl mb-4 font-cyber">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Full-Stack Web Development</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Creating modern, responsive user interfaces, custom category architectures, and WordPress hosting deployments.
+                    </p>
+                    <ul class="text-xs font-mono text-cyber-green space-y-1">
+                        <li>&bull; HTML5 / CSS3 / JavaScript</li>
+                        <li>&bull; WordPress &amp; Hostinger Setup</li>
+                        <li>&bull; Responsive UI Restructuring</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media & Content Card -->
+                <div class="bg-slate-950 border border-cyber-magenta/30 rounded-xl p-6 hover:border-cyber-magenta transition-all">
+                    <div class="w-12 h-12 rounded bg-cyber-magenta/10 text-cyber-magenta flex items-center justify-center text-xl mb-4 font-cyber">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Social Media &amp; Design</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Designing marketing graphics with Canva, running automated Google Forms for audience feedback, and managing brand channels.
+                    </p>
+                    <ul class="text-xs font-mono text-cyber-magenta space-y-1">
+                        <li>&bull; Canva Graphics &amp; Layouts</li>
+                        <li>&bull; Data Collection Automation</li>
+                        <li>&bull; Content Workflow Mgmt</li>
+                    </ul>
+                </div>
+
+                <!-- Back-Office & WFH Data Entry Card -->
+                <div class="bg-slate-950 border border-amber-400/30 rounded-xl p-6 hover:border-amber-400 transition-all">
+                    <div class="w-12 h-12 rounded bg-amber-400/10 text-amber-400 flex items-center justify-center text-xl mb-4 font-cyber">
+                        <i class="fa-solid fa-file-invoice"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Back-Office &amp; Data Entry</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        High-accuracy data entry, MS Access relational DBMS forms/reports management, and patient/student record indexing.
+                    </p>
+                    <ul class="text-xs font-mono text-amber-400 space-y-1">
+                        <li>&bull; Advanced MS Access &amp; Excel</li>
+                        <li>&bull; High Accuracy WFH Entry</li>
+                        <li>&bull; Digital Record Indexing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section id="projects" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-cyan mb-2">Repository Showcase</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Featured Projects</p>
+                </div>
+
+                <!-- Interactive Project Tabs -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0 font-cyber text-xs">
+                    <button class="project-tab active px-3.5 py-2 rounded bg-cyber-cyan text-slate-950 font-bold transition-all" data-tab="all">ALL_PROJECTS</button>
+                    <button class="project-tab px-3.5 py-2 rounded bg-slate-900 text-slate-300 hover:text-white border border-slate-700 transition-all" data-tab="robotics">ROBOTICS/HARDWARE</button>
+                    <button class="project-tab px-3.5 py-2 rounded bg-slate-900 text-slate-300 hover:text-white border border-slate-700 transition-all" data-tab="web">WEB_DEV</button>
+                    <button class="project-tab px-3.5 py-2 rounded bg-slate-900 text-slate-300 hover:text-white border border-slate-700 transition-all" data-tab="db">CYBER_&amp;_DBMS</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1: Beach Cleaning Robot Car -->
+                <div class="project-card bg-slate-950 border border-cyber-green/40 rounded-xl overflow-hidden hover:border-cyber-green transition-all flex flex-col justify-between" data-category="robotics">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green text-[10px] font-cyber border border-cyber-green/30">ROBOTICS &amp; HARDWARE</span>
+                            <i class="fa-solid fa-robot text-cyber-green text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Beach Cleaning Autonomous Robot Car</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Designed and assembled a prototype robot car aimed at automated debris collection along beach coastlines during community sanitation drives.
+                        </p>
+                        <div class="p-2.5 mb-4 rounded bg-slate-900 border border-slate-800/80 text-[11px] font-mono text-cyber-green">
+                            <i class="fa-solid fa-chart-line mr-1"></i> Outcome: Collected ~85% surface plastics in field trials.
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Arduino / ESP</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Motor Drivers</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Robotics</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center text-xs font-cyber">
+                        <span class="text-slate-400">Environmental Tech</span>
+                        <a href="https://github.com/nishat-khan" target="_blank" rel="noopener noreferrer" class="text-cyber-green hover:underline flex items-center gap-1">
+                            <i class="fa-brands fa-github text-xs"></i> Code Repo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Crossword Website Restructuring -->
+                <div class="project-card bg-slate-950 border border-cyber-cyan/40 rounded-xl overflow-hidden hover:border-cyber-cyan transition-all flex flex-col justify-between" data-category="web">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded bg-cyber-cyan/10 text-cyber-cyan text-[10px] font-cyber border border-cyber-cyan/30">WEB DEV &amp; UI/UX</span>
+                            <i class="fa-solid fa-puzzle-piece text-cyber-cyan text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Crossword Website Category Architecture</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Enhanced a Crossword application by adding dynamic category landing pages, improving content discovery, and restructuring UI responsiveness.
+                        </p>
+                        <div class="p-2.5 mb-4 rounded bg-slate-900 border border-slate-800/80 text-[11px] font-mono text-cyber-cyan">
+                            <i class="fa-solid fa-chart-line mr-1"></i> Outcome: Reduced user navigation clicks by 40%.
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">HTML5/CSS3</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">JavaScript</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Category Architecture</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center text-xs font-cyber">
+                        <a href="https://github.com/nishat-khan" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white flex items-center gap-1">
+                            <i class="fa-brands fa-github text-xs"></i> Source
+                        </a>
+                        <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="text-cyber-cyan hover:underline">View LinkedIn Post &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Client Marketing Website -->
+                <div class="project-card bg-slate-950 border border-cyber-magenta/40 rounded-xl overflow-hidden hover:border-cyber-magenta transition-all flex flex-col justify-between" data-category="web">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded bg-cyber-magenta/10 text-cyber-magenta text-[10px] font-cyber border border-cyber-magenta/30">WORDPRESS &amp; HOSTING</span>
+                            <i class="fa-solid fa-globe text-cyber-magenta text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Digital Marketing Portfolio (marketingbyakhtar.com)</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Developed and deployed a dark-themed client website on Hostinger with custom domain DNS setup and structured service pages.
+                        </p>
+                        <div class="p-2.5 mb-4 rounded bg-slate-900 border border-slate-800/80 text-[11px] font-mono text-cyber-magenta">
+                            <i class="fa-solid fa-chart-line mr-1"></i> Outcome: 100% uptime &amp; SEO-optimized indexing.
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">WordPress</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Hostinger</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">DNS Config</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center text-xs font-cyber">
+                        <span class="text-slate-400">Live Client Site</span>
+                        <a href="https://marketingbyakhtar.com" target="_blank" rel="noopener noreferrer" class="text-cyber-magenta hover:underline flex items-center gap-1">Visit Site <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Smart Library Sensor Array -->
+                <div class="project-card bg-slate-950 border border-cyber-green/40 rounded-xl overflow-hidden hover:border-cyber-green transition-all flex flex-col justify-between" data-category="robotics">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded bg-cyber-green/10 text-cyber-green text-[10px] font-cyber border border-cyber-green/30">MICROCONTROLLER &amp; SENSORS</span>
+                            <i class="fa-solid fa-microchip text-cyber-green text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Smart Library Noise &amp; Air Quality Monitor</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Constructed an ESP32 microcontroller environmental sensing prototype to measure indoor acoustic decibels and ambient air parameters.
+                        </p>
+                        <div class="p-2.5 mb-4 rounded bg-slate-900 border border-slate-800/80 text-[11px] font-mono text-cyber-green">
+                            <i class="fa-solid fa-chart-line mr-1"></i> Outcome: Real-time decibel logging &amp; visual alerts.
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">ESP32</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Sensory Logic</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">IoT</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center text-xs font-cyber">
+                        <span class="text-slate-400">Academic Hardware</span>
+                        <a href="https://github.com/nishat-khan" target="_blank" rel="noopener noreferrer" class="text-cyber-green hover:underline flex items-center gap-1">
+                            <i class="fa-brands fa-github text-xs"></i> Code Repo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Secure MS Access DBMS -->
+                <div class="project-card bg-slate-950 border border-amber-400/40 rounded-xl overflow-hidden hover:border-amber-400 transition-all flex flex-col justify-between" data-category="db">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded bg-amber-400/10 text-amber-400 text-[10px] font-cyber border border-amber-400/30">DATABASE SECURITY</span>
+                            <i class="fa-solid fa-database text-amber-400 text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Secure Relational MS Access DBMS</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                            Built a secure relational database with Access Forms, automated Reports, and entry validation constraints for administrative or hospital records.
+                        </p>
+                        <div class="p-2.5 mb-4 rounded bg-slate-900 border border-slate-800/80 text-[11px] font-mono text-amber-400">
+                            <i class="fa-solid fa-chart-line mr-1"></i> Outcome: Zero invalid data entries via strict constraints.
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 font-mono text-[11px] text-slate-300">
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">MS Access</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Validation Rules</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800">Data Integrity</span>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center text-xs font-cyber">
+                        <span class="text-slate-400">Back-Office Ready</span>
+                        <span class="text-amber-400">Data Protection Applied</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Award & Media Spotlight -->
+    <section id="achievements" class="py-20 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-magenta mb-2">Distinctions &amp; Media</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Photography Award &amp; Credentials</p>
+            </div>
+
+            <!-- Spotlight Card with Javed Jaffrey Photography Mention -->
+            <div class="bg-gradient-to-r from-cyber-magenta/10 via-slate-950 to-cyber-cyan/10 border border-cyber-magenta/40 rounded-2xl p-8 mb-12 relative overflow-hidden neon-glow-magenta">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded bg-cyber-magenta/20 text-cyber-magenta text-xs font-cyber border border-cyber-magenta/40">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span>CELEBRITY_AWARD_RECOGNITION</span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Intercollegiate Photography Competition Winner</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Awarded Certificate of Excellence in Photography at <strong class="text-white">SNP Joshi Women's College, Ghatkopar</strong>. Certificate presented directly by renowned actor &amp; artist <strong class="text-cyber-magenta font-bold">Javed Jaffrey</strong> in collaboration with <strong class="text-white">Mumbai4Peace</strong>.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2 text-xs font-cyber">
+                            <span class="text-cyber-cyan"><i class="fa-solid fa-camera mr-1"></i> Visual Storytelling</span>
+                            <span class="text-cyber-green"><i class="fa-solid fa-award mr-1"></i> Intercollegiate Distinction</span>
+                            <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="text-cyber-magenta hover:underline"><i class="fa-brands fa-linkedin mr-1"></i> Posted on LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-4 flex justify-center lg:justify-end">
+                        <button id="open-award-modal" class="px-6 py-4 rounded bg-cyber-magenta hover:bg-cyber-magenta/80 text-slate-950 font-cyber font-bold flex items-center space-x-3 transition-all shadow-lg shadow-cyber-magenta/30">
+                            <i class="fa-solid fa-images text-2xl"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] uppercase tracking-wider text-slate-950 opacity-80">View Details</span>
+                                <span class="block text-sm">Award &amp; Photo Gallery</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cert 1 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 hover:border-cyber-cyan transition-all">
+                    <i class="fa-solid fa-screwdriver-wrench text-cyber-cyan text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm mb-1">Hardware &amp; Software Course</h4>
+                    <p class="text-xs text-slate-400 mb-2">Kohinoor Technical Institute</p>
+                    <span class="text-[11px] font-mono text-cyber-cyan">Hardware Assembly &amp; OS Setup</span>
+                </div>
+
+                <!-- Cert 2 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 hover:border-cyber-green transition-all">
+                    <i class="fa-brands fa-java text-cyber-green text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm mb-1">Java Certification</h4>
+                    <p class="text-xs text-slate-400 mb-2">Sulven Consultant Pvt Ltd</p>
+                    <span class="text-[11px] font-mono text-cyber-green">Credential ID: EQIJTVPH</span>
+                </div>
+
+                <!-- Cert 3 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 hover:border-cyber-magenta transition-all">
+                    <i class="fa-brands fa-wordpress text-cyber-magenta text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm mb-1">WordPress Site Building</h4>
+                    <p class="text-xs text-slate-400 mb-2">Coursera Certificate</p>
+                    <span class="text-[11px] font-mono text-cyber-magenta">Record: 2LU7T1LXB65Q</span>
+                </div>
+
+                <!-- Cert 4 -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl p-5 hover:border-amber-400 transition-all">
+                    <i class="fa-brands fa-python text-amber-400 text-2xl mb-3"></i>
+                    <h4 class="font-bold text-white text-sm mb-1">Python Programming</h4>
+                    <p class="text-xs text-slate-400 mb-2">Coursera / UST</p>
+                    <span class="text-[11px] font-mono text-amber-400">Record: RTHVOUAA2XSW</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Work & Community Initiatives -->
+    <section id="socialwork" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-green mb-2">Community Impact</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Social Work &amp; Educational Initiatives</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Social Work Card 1: NSS Volunteer -->
+                <div class="bg-slate-950 border border-cyber-green/30 rounded-xl p-6 hover:border-cyber-green transition-all">
+                    <div class="w-10 h-10 rounded bg-cyber-green/10 text-cyber-green flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">NSS College Volunteer</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Active volunteer in National Service Scheme (NSS) activities: organized beach cleanups, peace marches, anti-ragging poster campaigns, and old age home visits.
+                    </p>
+                    <span class="text-xs font-mono text-cyber-green">&bull; Social Welfare &amp; Awareness</span>
+                </div>
+
+                <!-- Social Work Card 2: Nish Tech Kids -->
+                <div class="bg-slate-950 border border-cyber-cyan/30 rounded-xl p-6 hover:border-cyber-cyan transition-all">
+                    <div class="w-10 h-10 rounded bg-cyber-cyan/10 text-cyber-cyan flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">"Nish Tech Kids" Educational Venture</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Founded a computer education initiative providing primary school students with foundational IT literacy, MS Office tools, and basic coding introduction.
+                    </p>
+                    <span class="text-xs font-mono text-cyber-cyan">&bull; Youth Tech Empowerment</span>
+                </div>
+
+                <!-- Social Work Card 3: School Computer Teacher -->
+                <div class="bg-slate-950 border border-cyber-magenta/30 rounded-xl p-6 hover:border-cyber-magenta transition-all">
+                    <div class="w-10 h-10 rounded bg-cyber-magenta/10 text-cyber-magenta flex items-center justify-center text-lg mb-4">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">1 Year School Computer Educator</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4">
+                        Taught IT curriculum to 150+ students at St. Columba School, managed practical computer labs, and organized digital student records.
+                    </p>
+                    <span class="text-xs font-mono text-cyber-magenta">&bull; Lab &amp; Curriculum Mgmt</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cyberspace CLI Terminal -->
+    <section id="terminal-section" class="py-20 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-cyan mb-2">Interactive Interface</h2>
+                <p class="text-3xl font-extrabold text-white">Cyberspace CLI Terminal</p>
+                <p class="text-xs text-slate-400 font-mono mt-1">Type commands to inspect dossier parameters directly.</p>
+            </div>
+
+            <!-- Terminal Window -->
+            <div class="bg-slate-950 border border-cyber-cyan/40 rounded-xl overflow-hidden neon-glow-cyan">
+                <div class="bg-slate-900 px-4 py-2.5 border-b border-slate-800 flex items-center justify-between font-cyber text-xs">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-cyber-green"></span>
+                        <span class="text-slate-400 ml-2">nishat@cyberspace-cli:~</span>
+                    </div>
+                    <span class="text-cyber-cyan text-[11px]">Type 'help' for commands</span>
+                </div>
+
+                <div id="terminal-body" class="p-6 font-mono text-xs text-slate-200 h-80 overflow-y-auto space-y-3">
+                    <p class="text-cyber-green">Nishat Khan Cyberspace Terminal [Version 3.1.0]</p>
+                    <p class="text-slate-400">Copyright (c) Nishat Khan. All rights reserved.</p>
+                    <p class="text-cyber-cyan">Type <span class="text-white font-bold">'help'</span> to view available commands (e.g., skills, projects, forensics, socialwork, contact).</p>
+                    <p class="text-slate-500">--------------------------------------------------------------------------------</p>
+                </div>
+
+                <div class="bg-slate-900/90 px-4 py-3 border-t border-slate-800 flex items-center font-mono text-xs">
+                    <span class="text-cyber-green mr-2 font-bold">nishat@cyberspace:~$</span>
+                    <!-- Audit Fix #5: Removed autofocus to prevent unexpected scrolling on page load -->
+                    <input type="text" id="terminal-input" class="bg-transparent text-cyber-cyan focus:outline-none w-full" placeholder="Type command here...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Direct Contact Section -->
+    <section id="contact" class="py-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <h2 class="text-xs font-cyber uppercase tracking-widest text-cyber-cyan mb-2">Initiate Contact</h2>
+                        <p class="text-3xl font-extrabold text-white">Let's Connect</p>
+                    </div>
+
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Ready for opportunities in Digital Forensics, Web Development, Social Media Management, WFH Internships, and Data Entry / Back-Office operations.
+                    </p>
+
+                    <div class="space-y-4 font-mono text-xs">
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex justify-between items-center">
+                            <div>
+                                <span class="block text-slate-500 text-[10px]">EMAIL_ADDRESS</span>
+                                <span class="text-slate-200 text-sm">khanny9820@gmail.com</span>
+                            </div>
+                            <button onclick="copyToClipboard('khanny9820@gmail.com', 'Email copied!')" class="p-2 text-cyber-cyan hover:underline">Copy</button>
+                        </div>
+
+                        <div class="bg-slate-950 border border-slate-800 rounded-xl p-4 flex justify-between items-center">
+                            <div>
+                                <span class="block text-slate-500 text-[10px]">PHONE_NUMBER</span>
+                                <span class="text-slate-200 text-sm">+91 9820365779</span>
+                            </div>
+                            <button onclick="copyToClipboard('+919820365779', 'Phone copied!')" class="p-2 text-cyber-cyan hover:underline">Copy</button>
+                        </div>
+
+                        <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="bg-slate-950 border border-slate-800 hover:border-cyber-cyan rounded-xl p-4 flex justify-between items-center transition-all">
+                            <div>
+                                <span class="block text-slate-500 text-[10px]">LINKEDIN_PROFILE</span>
+                                <span class="text-cyber-cyan text-sm">nishat-khan-b59b33424</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-400"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7">
+                    <!-- Audit Fix #1: Added Formspree endpoint placeholder & submit handling -->
+                    <form id="contact-form" action="https://formspree.io/f/xbjnqvqy" method="POST" class="bg-slate-950 border border-slate-800 rounded-xl p-6 sm:p-8 space-y-5">
+                        <h3 class="text-lg font-bold font-cyber text-white">Send Direct Signal</h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="c-name" class="block text-[11px] font-cyber text-slate-400 mb-1">YOUR_NAME</label>
+                                <input type="text" id="c-name" name="name" required placeholder="Name / Recruiter" class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyber-cyan">
+                            </div>
+                            <div>
+                                <label for="c-email" class="block text-[11px] font-cyber text-slate-400 mb-1">YOUR_EMAIL</label>
+                                <input type="email" id="c-email" name="email" required placeholder="email@domain.com" class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyber-cyan">
+                            </div>
+                        </div>
+
+                        <div>
+                            <!-- Audit Fix #2: Corrected label for attribute to match input ID (c-subject) -->
+                            <label for="c-subject" class="block text-[11px] font-cyber text-slate-400 mb-1">ROLE_TYPE / SUBJECT</label>
+                            <input type="text" id="c-subject" name="subject" required placeholder="Forensics / Web Dev / Data Entry Opportunity" class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyber-cyan">
+                        </div>
+
+                        <div>
+                            <label for="c-msg" class="block text-[11px] font-cyber text-slate-400 mb-1">MESSAGE</label>
+                            <textarea id="c-msg" name="message" rows="4" required placeholder="Enter message details..." class="w-full bg-slate-900 border border-slate-800 rounded px-4 py-2.5 text-xs text-slate-200 focus:outline-none focus:border-cyber-cyan resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full py-3 rounded bg-cyber-cyan hover:bg-cyber-cyan/80 text-slate-950 font-cyber font-bold transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span id="btn-text">TRANSMIT_MESSAGE</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-slate-950 border-t border-slate-800 text-xs font-cyber text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Nishat Khan &bull; Cyberspace Portfolio</p>
+            <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-cyan">LinkedIn</a>
+                <a href="mailto:khanny9820@gmail.com" class="hover:text-cyber-cyan">Email</a>
+                <a href="#hero" class="hover:text-cyber-cyan">Back to Top ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Award Details Modal -->
+    <!-- Audit Fix #3: Added dialog accessibility attributes (role="dialog", aria-modal="true", aria-labelledby) -->
+    <div id="award-modal" role="dialog" aria-modal="true" aria-labelledby="award-modal-title" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+        <div id="award-modal-card" class="bg-slate-950 border border-cyber-magenta/60 rounded-2xl p-6 sm:p-8 max-w-lg w-full neon-glow-magenta relative space-y-6">
+            <button id="close-award-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2 focus:outline-none focus:ring-2 focus:ring-cyber-magenta rounded" aria-label="Close modal">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <span class="text-xs font-cyber text-cyber-magenta uppercase">Distinction Spotlight</span>
+                <h3 id="award-modal-title" class="text-2xl font-extrabold text-white">Photography Competition Winner</h3>
+                <p class="text-xs text-slate-400">Presented by <strong class="text-cyber-magenta font-bold">Javed Jaffrey</strong> &amp; <strong class="text-white">Mumbai4Peace</strong></p>
+            </div>
+
+            <div class="space-y-3 bg-slate-900 p-4 rounded-xl border border-slate-800 text-xs text-slate-300">
+                <p><strong class="text-white">&bull; Institution:</strong> SNP Joshi Women's College, Ghatkopar.</p>
+                <p><strong class="text-white">&bull; Celebrity Guest:</strong> Actor Javed Jaffrey handed out the certificate of distinction in person.</p>
+                <p><strong class="text-white">&bull; Key Focus:</strong> Visual composition, framing, story capture, and creative lighting.</p>
+                <p><strong class="text-white">&bull; Social Media Integration:</strong> Posted and verified on LinkedIn profile.</p>
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <a href="https://www.linkedin.com/in/nishat-khan-b59b33424/" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded bg-cyber-magenta/20 text-cyber-magenta border border-cyber-magenta/40 text-xs font-cyber hover:bg-cyber-magenta hover:text-slate-950 transition-all">
+                    View LinkedIn Post &rarr;
+                </a>
+                <button id="close-award-modal-btn" class="px-4 py-2 rounded bg-slate-800 text-slate-300 text-xs font-cyber hover:text-white focus:outline-none focus:ring-2 focus:ring-cyber-magenta">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 border border-cyber-cyan/50 text-slate-100 px-4 py-3 rounded-lg shadow-xl flex items-center space-x-3 transform translate-y-20 opacity-0 transition-all duration-300 font-cyber text-xs">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-cyber-cyan"></i>
+        <span id="toast-msg">Notification</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Audit Fix #4: Modern Async Clipboard API with Fallback and Error Handling
+        async function copyToClipboard(text, msg) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                    showToast(msg || 'Copied to clipboard!');
+                } else {
+                    const temp = document.createElement('textarea');
+                    temp.value = text;
+                    temp.style.position = 'fixed';
+                    temp.style.left = '-9999px';
+                    document.body.appendChild(temp);
+                    temp.select();
+                    const successful = document.execCommand('copy');
+                    document.body.removeChild(temp);
+                    if (successful) {
+                        showToast(msg || 'Copied to clipboard!');
+                    } else {
+                        showToast('Failed to copy. Please select text manually.');
+                    }
+                }
+            } catch (err) {
+                showToast('Clipboard permission denied.');
+            }
+        }
+
+        function showToast(message, isError = false) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+            
+            toastMsg.textContent = message;
+            if (isError) {
+                toastIcon.className = "fa-solid fa-circle-exclamation text-rose-400";
+                toast.className = toast.className.replace('border-cyber-cyan/50', 'border-rose-500/50');
+            } else {
+                toastIcon.className = "fa-solid fa-circle-check text-cyber-cyan";
+                toast.className = toast.className.replace('border-rose-500/50', 'border-cyber-cyan/50');
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        window.onload = function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+            // Project Tabs Filter
+            const projectTabs = document.querySelectorAll('.project-tab');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    projectTabs.forEach(t => {
+                        t.classList.remove('bg-cyber-cyan', 'text-slate-950', 'font-bold');
+                        t.classList.add('bg-slate-900', 'text-slate-300');
+                    });
+                    tab.classList.remove('bg-slate-900', 'text-slate-300');
+                    tab.classList.add('bg-cyber-cyan', 'text-slate-950', 'font-bold');
+
+                    const category = tab.getAttribute('data-tab');
+                    projectCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Audit Fix #3: Accessibility Modal Trap & Escape key listener
+            const openModalBtn = document.getElementById('open-award-modal');
+            const modal = document.getElementById('award-modal');
+            const closeModalBtn1 = document.getElementById('close-award-modal');
+            const closeModalBtn2 = document.getElementById('close-award-modal-btn');
+            let previouslyFocusedElement = null;
+
+            function openM() {
+                previouslyFocusedElement = document.activeElement;
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    closeModalBtn1.focus();
+                }, 10);
+                document.addEventListener('keydown', handleModalKeyDown);
+            }
+
+            function closeM() {
+                modal.classList.add('opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    if (previouslyFocusedElement) previouslyFocusedElement.focus();
+                }, 300);
+                document.removeEventListener('keydown', handleModalKeyDown);
+            }
+
+            function handleModalKeyDown(e) {
+                if (e.key === 'Escape') {
+                    closeM();
+                } else if (e.key === 'Tab') {
+                    const focusables = modal.querySelectorAll('button, a, input, [tabindex]:not([tabindex="-1"])');
+                    const first = focusables[0];
+                    const last = focusables[focusables.length - 1];
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                }
+            }
+
+            openModalBtn.addEventListener('click', openM);
+            closeModalBtn1.addEventListener('click', closeM);
+            closeModalBtn2.addEventListener('click', closeM);
+
+            // Interactive CLI Terminal Execution
+            const terminalInput = document.getElementById('terminal-input');
+            const terminalBody = document.getElementById('terminal-body');
+
+            const commands = {
+                'help': "Available commands: 'skills', 'projects', 'forensics', 'socialwork', 'contact', 'clear'",
+                'skills': "Tech: HTML/CSS/JS, Python, Java, MS Access DBMS, WordPress, Canva, Data Entry",
+                'projects': "Projects: 1. Beach Cleaning Robot 2. Crossword Web Restructuring 3. Marketing Client Site 4. Smart Library ESP32",
+                'forensics': "Digital Forensics Focus: Network Hygiene, Relational MS Access Security, Data Integrity, File Indexing",
+                'socialwork': "Social Work: NSS Volunteer (Beach Cleanups, Peace Marches), Founder of 'Nish Tech Kids' Computer Classes",
+                'contact': "Email: khanny9820@gmail.com | Phone: +91 9820365779 | LinkedIn: nishat-khan-b59b33424"
+            };
+
+            terminalInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const val = terminalInput.value.trim().toLowerCase();
+                    terminalInput.value = '';
+
+                    const cmdLine = document.createElement('p');
+                    cmdLine.className = 'text-cyber-green font-bold';
+                    cmdLine.textContent = `nishat@cyberspace:~$ ${val}`;
+                    terminalBody.appendChild(cmdLine);
+
+                    if (val === 'clear') {
+                        terminalBody.innerHTML = '';
+                        return;
+                    }
+
+                    const outputLine = document.createElement('p');
+                    if (commands[val]) {
+                        outputLine.className = 'text-cyber-cyan';
+                        outputLine.textContent = commands[val];
+                    } else if (val === '') {
+                        return;
+                    } else {
+                        outputLine.className = 'text-rose-400';
+                        outputLine.textContent = `Command not recognized: '${val}'. Type 'help' for available commands.`;
+                    }
+
+                    terminalBody.appendChild(outputLine);
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }
+            });
+
+            // Audit Fix #1: Real Form Dispatch with Error Handling & mailto Fallback
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = document.getElementById('btn-text');
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                btnText.textContent = 'TRANSMITTING...';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(contactForm);
+
+                try {
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        showToast('Signal transmitted! Nishat will contact you soon.');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Server response error');
+                    }
+                } catch (error) {
+                    // Fallback to mailto if API fails or isn't hooked up yet
+                    const name = encodeURIComponent(document.getElementById('c-name').value);
+                    const subject = encodeURIComponent(document.getElementById('c-subject').value);
+                    const msg = encodeURIComponent(document.getElementById('c-msg').value);
+                    window.location.href = `mailto:khanny9820@gmail.com?subject=${subject}&body=From: ${name}%0D%0A%0D%0A${msg}`;
+                    showToast('Opening default email app...', true);
+                } finally {
+                    btnText.textContent = 'TRANSMIT_MESSAGE';
+                    submitBtn.disabled = false;
+                }
+            });
+        };
+    </script>
+</body>
+</html>
